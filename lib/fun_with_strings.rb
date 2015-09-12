@@ -14,6 +14,13 @@ module FunWithStrings
   end
   def anagram_groups
     # your code here
+    result = {};
+    if self.casecmp("") == 0 
+      return []
+    end
+    current_str = self.split
+    result = current_str.group_by{ |value| value.downcase.chars.sort}.values
+    return result
   end
 end
 
